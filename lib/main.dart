@@ -1,43 +1,36 @@
+import 'package:examenv3/pagina_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:examenv3/menu.dart';
+import 'package:examenv3/pagina_checkbox.dart';
+import 'package:examenv3/pagina_cupertinoswitch.dart';
+import 'package:examenv3/pagina_drawer_header.dart';
+import 'package:examenv3/pagina_fractional_translation.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MisRutasApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MisRutasApp extends StatelessWidget {
+  const MisRutasApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      title: "XD",
+      debugShowCheckedModeBanner: false, // Esto quita el debug banner
       theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+        appBarTheme: AppBarTheme(
+          backgroundColor:
+              Color(0xff2f38be), // Color personalizado para la AppBar
         ),
       ),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const FirstScreen(),
+        "/1": (context) => const Widget025(),
+        "/2": (context) => const Widget033(),
+        "/3": (context) => const Widget066(),
+        "/4": (context) => const Widget088(),
+        "/5": (context) => const Widget108(),
+      },
     );
   }
 }
